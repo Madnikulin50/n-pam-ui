@@ -1,4 +1,4 @@
-import apiStore from '../../api/store'
+import api from '../../api/settings'
 import * as types from '../mutation-types'
 
 // initial state
@@ -14,12 +14,12 @@ const getters = {
 // actions
 const actions = {
   getStoreSettings ({ commit }) {
-    apiStore.getStore(dataFromServer => {
+    api.getStore(dataFromServer => {
       commit(types.SET_STORE_SETTINGS, { dataFromServer })
     })
   },
   setStoreSettings ({ commit }, data) {
-    apiStore.setStore(data, dataFromServer => {
+    api.setStore(data, dataFromServer => {
     })
   }
 }
