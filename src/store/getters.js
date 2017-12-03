@@ -1,5 +1,5 @@
-export const numAgents = state => {
-  return state.agents.all.length /* state.cart.added.map(({ id, quantity }) => {
+export const numConnections = state => {
+  return state.connections.all.length /* state.cart.added.map(({ id, quantity }) => {
     const product = state.products.all.find(p => p.id === id)
     return {
       title: product.title,

@@ -3,16 +3,11 @@
     
   </div>
 </template>
-
 <script>
-
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'view',
-  components: {
-    dropdown
-  },
   computed: mapGetters(
     {
       data: 'currentView'

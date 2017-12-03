@@ -1,4 +1,4 @@
-import agents from '../../api/connection'
+import api from '../../api/connection'
 import * as types from '../mutation-types'
 
 // initial state
@@ -9,29 +9,29 @@ const state = {
 
 // getters
 const getters = {
-  allConnection: state => state.all,
+  allConnections: state => state.all,
   currentConnection: state => state.current
 }
 
 // actions
 const actions = {
   getAllConnections ({ commit }) {
-    agents.getAll(connections => {
+    api.getAll(connections => {
       commit(types.SET_CONNECTIONS, { connections })
     })
   },
   getConnection ({ commit }, id) {
-    agents.get(id, connection => {
+    api.get(id, connection => {
       commit(types.SET_CURRENT_CONNECTION, { connection })
     })
   },
   removeConnection ({ commit }, id) {
-    agents.remove(id, () => {
+    api.remove(id, () => {
       this.getAllConnections({ commit })
     })
   },
   setConnection ({ commit }, data) {
-    agents.set(data, () => {
+    api.set(data, () => {
       this.getAllConnections({ commit })
     })
   }
